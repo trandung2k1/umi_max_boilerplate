@@ -18,7 +18,7 @@ import {
 import { useEmotionCss } from '@ant-design/use-emotion-css';
 import { FormattedMessage, Helmet, SelectLang, history, useIntl, useModel } from '@umijs/max';
 import { Alert, Tabs, message } from 'antd';
-import React, { useState } from 'react';
+import React, { useEffect, useState } from 'react';
 import { flushSync } from 'react-dom';
 import Settings from '../../../../config/defaultSettings';
 
@@ -141,13 +141,13 @@ const Login: React.FC = () => {
   const { status, type: loginType } = userLoginState;
 
   // Test proxy api
-  // useEffect(() => {
-  //   fetch('/api/todos')
-  //     .then((rs) => rs.json())
-  //     .then((data) => {
-  //       console.log(data);
-  //     });
-  // }, []);
+  useEffect(() => {
+    fetch('/api/photos')
+      .then((rs) => rs.json())
+      .then((data) => {
+        console.log(data);
+      });
+  }, []);
 
   // useEffect(() => {
   //   PhotosControllerGetAllPhotos().then((rs) => {
