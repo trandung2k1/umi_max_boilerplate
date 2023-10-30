@@ -51,6 +51,7 @@ export default [
     icon: 'table',
     path: '/list',
     component: './TableList',
+    access: 'canAdmin',
   },
   {
     path: '/',
